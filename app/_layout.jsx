@@ -11,6 +11,8 @@ const RootLayout = () => {
         <Stack screenOptions={{headerStyle:{backgroundColor:theme.navBackground},headerTintColor:theme.title}} >
             <Stack.Screen name="index" options={{title:'首页'}} />
             <Stack.Screen name="about" options={{title:'关于'}} />
+            <Stack.Screen name="(auth)/login" options={{title:'登陆'}} />
+            <Stack.Screen name="(auth)/register" options={{title:'注册'}} />
         </Stack>
     </>
   )
