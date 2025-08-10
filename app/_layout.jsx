@@ -4,11 +4,13 @@ import { Stack } from 'expo-router'
 import { Colors } from '../constants/Colors';
 import { StatusBar } from "expo-status-bar"
 import { UserProvider } from "../contexts/UserContext"
+import { BooksProvider } from "../contexts/BooksContext"
 const RootLayout = () => {
   const colorTheme = useColorScheme();  
   const theme = Colors[colorTheme] ?? Colors.light;
   return (
     <UserProvider>
+      <BooksProvider>
         <StatusBar value="auto" /> 
         <Stack screenOptions={{headerStyle:{backgroundColor:theme.navBackground},headerTintColor:theme.title}} >
             <Stack.Screen name="index" options={{title:'首页'}} />
@@ -22,6 +24,7 @@ const RootLayout = () => {
             <Stack.Screen name="(dashboard)/create" options={{title:'创建'}} />
             <Stack.Screen name="(dashboard)/profile" options={{title:'个人'}} /> */}
         </Stack>
+      </BooksProvider>
     </UserProvider>
   )
 }
